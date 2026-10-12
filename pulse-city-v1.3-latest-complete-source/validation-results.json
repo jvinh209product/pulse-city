@@ -1,0 +1,196 @@
+{
+  "startedAt": "2026-10-12T09:56:12.507951+00:00",
+  "focusedPassCount": 1,
+  "nodeVersion": "v24.19.0",
+  "npmVersion": "11.9.0",
+  "commands": [
+    {
+      "command": "npm ci",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.294,
+      "stdout": "\nup to date in 187ms\n",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.711,
+      "stdout": "\n> pulse-city@1.3.0 build\n> node scripts/build.mjs\n\nStatic production build passed: 16 production/source files, 19 local references, JavaScript syntax checked.\nOutput: dist/ (editable static source; no compilation or external asset downloads).\n",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    {
+      "command": "npm run check",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 2.691,
+      "stdout": "\n> pulse-city@1.3.0 check\n> node checks.mjs\n\nPassed: 27 story combinations, pickup waiting, road movement, rain, pause, replay, 5 random seeds, extended exploration, 2245 shared instances, local assets, and UI targets.\nOutcome ranges: {\"onTime\":[\"41.7\",\"75.8\"],\"cost\":[\"2.75\",\"3.23\"],\"delivered\":[50,73]}\n",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    {
+      "command": "npm run check:v13",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 3.002,
+      "stdout": "\n> pulse-city@1.3.0 check:v13\n> node checks-v13.mjs\n\nV1.3 passed: 27 recorded action exercises, 27 complete story combinations, distinct dispatch matches (R02, R08, R04), compatible batching, real crisis rerouting, delayed policy realization, replay, duplicate guard, reset, heat materials/counts, and 8 camera-fit widths.\nBrowser visual, DOM click and touch QA: unavailable.\n",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    }
+  ],
+  "browserQA": "Not tested: no managed browser control/GPU session is available for this export.",
+  "externalDeployment": "Not performed.",
+  "preview": {
+    "command": "npm run preview",
+    "status": "passed",
+    "entryURL": "http://127.0.0.1:4173/",
+    "serverOutput": [
+      "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.",
+      "",
+      "> pulse-city@1.3.0 preview",
+      "> node scripts/serve.mjs --port 4173",
+      "",
+      "PULSE CITY: http://127.0.0.1:4173"
+    ],
+    "requests": [
+      {
+        "path": "/",
+        "status": 200,
+        "bytes": 17826,
+        "contentType": "text/html; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/app.js",
+        "status": 200,
+        "bytes": 35066,
+        "contentType": "text/javascript; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/city.js",
+        "status": 200,
+        "bytes": 28269,
+        "contentType": "text/javascript; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/dm-sans.ttf",
+        "status": 200,
+        "bytes": 48280,
+        "contentType": "font/ttf",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/favicon.svg",
+        "status": 200,
+        "bytes": 216,
+        "contentType": "image/svg+xml",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/feedback.js",
+        "status": 200,
+        "bytes": 16346,
+        "contentType": "text/javascript; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/gsap.min.js",
+        "status": 200,
+        "bytes": 72214,
+        "contentType": "text/javascript; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/impact-scene.js",
+        "status": 200,
+        "bytes": 4196,
+        "contentType": "text/javascript; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/plex-mono.ttf",
+        "status": 200,
+        "bytes": 128812,
+        "contentType": "font/ttf",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/simulation.js",
+        "status": 200,
+        "bytes": 18878,
+        "contentType": "text/javascript; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/social-preview.png",
+        "status": 200,
+        "bytes": 298423,
+        "contentType": "image/png",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/space-grotesk-bold.ttf",
+        "status": 200,
+        "bytes": 69308,
+        "contentType": "font/ttf",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/space-grotesk.ttf",
+        "status": 200,
+        "bytes": 69360,
+        "contentType": "font/ttf",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/style.css",
+        "status": 200,
+        "bytes": 30248,
+        "contentType": "text/css; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/three.module.min.js",
+        "status": 200,
+        "bytes": 670681,
+        "contentType": "text/javascript; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/v13.css",
+        "status": 200,
+        "bytes": 15871,
+        "contentType": "text/css; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/index.html",
+        "status": 200,
+        "bytes": 17826,
+        "contentType": "text/html; charset=utf-8",
+        "identicalToLocalFile": true
+      },
+      {
+        "path": "/assets/missing-module.js",
+        "status": 404,
+        "expected": 404
+      },
+      {
+        "path": "/not-an-authored-route",
+        "status": 404,
+        "expected": 404
+      }
+    ],
+    "hashAnchorRefresh": "passed (HTTP entry response only; no DOM navigation)"
+  },
+  "sourcePreservation": {
+    "status": "passed",
+    "checkedFiles": 19,
+    "applicationFiles": 16,
+    "changedFiles": []
+  },
+  "buildStatus": "passed",
+  "status": "passed",
+  "finishedAt": "2026-10-12T09:56:19.562889+00:00"
+}

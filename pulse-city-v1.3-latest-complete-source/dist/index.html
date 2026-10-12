@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f5ee">
+  <title>PULSE CITY — Interactive Delivery Simulation by Vinh Nguyen</title>
+  <meta name="description" content="An interactive 3D simulation exploring dispatch, delivery batching, SLA and last-mile logistics trade-offs.">
+  <meta property="og:title" content="PULSE CITY — Can you keep the city moving?">
+  <meta property="og:description" content="Every order is a promise. Every route is a decision. An interactive delivery experiment by Vinh Nguyen.">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://pulse-city-vinh.kwxmol99-7246.chatgpt.site">
+  <meta property="og:image" content="https://pulse-city-vinh.kwxmol99-7246.chatgpt.site/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/space-grotesk.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/v13.css">
+  <script src="assets/gsap.min.js" defer></script>
+</head>
+<body>
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+  <symbol id="i-city" viewBox="0 0 24 24"><path d="M3 21V10h6v11m0 0V3h7v18m0 0V8h5v13M1 21h22M12 7h1m-1 4h1m-1 4h1M5 14h1m-1 3h1m12-5h1m-1 4h1"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m3 7 9-5 9 5-9 5-9-5Zm0 5 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="3" y="15" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h6M6 9v6m12-6v6M9 18h6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path d="M6 15a4 4 0 0 1-1-8 6 6 0 0 1 11-1 4 4 0 1 1 2 9M7 18l-1 3m6-3-1 3m6-3-1 3"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4Zm4 5a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4Zm5 5 6 6m0-6-6 6"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  <symbol id="i-restart" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 9M3 4v6h6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14m-7-7v14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-focus" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h9a4 4 0 0 1 0 8H8a3 3 0 0 0 0 6h9"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5" cy="17" r="4"/><circle cx="19" cy="17" r="4"/><path d="m5 17 5-9 5 9H5m5-9h6l3 9M9 5h4m3-2h3l2 3"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="m3 7 9-5 9 5v10l-9 5-9-5V7Zm0 0 9 5 9-5m-9 5v10m-5-17 10 5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+</defs></svg>
+<div id="loader" class="loader" role="status"><div class="loading-city"><i></i><i></i><i></i><i></i><i></i></div><b>PULSE CITY</b><p>Waking up the city<span id="loadDots">...</span></p><div class="loading-line"><i id="loadLine"></i></div><span id="loadPercent" class="mono">0%</span></div>
+<a class="skip-link" href="#startButton">Skip to the experience</a>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Pulse City home"><svg class="brand-mark" viewBox="0 0 30 30" fill="none"><path d="m3 11 6-3 6 3v8l-6 3-6-3V11Zm12-5 6-3 6 3v8l-6 3-6-3V6Zm0 15 6-3 6 3v6l-6 3-6-3v-6Z" fill="currentColor"/></svg><span>PULSE CITY<span class="brand-dot">.</span></span></a>
+  <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><button id="navExplore">Explore the city</button><a href="#creator">About</a></nav>
+  <span class="header-caption mono">A PRODUCT EXPERIMENT <span>↗</span></span>
+</header>
+<main id="top">
+  <section class="experience" aria-label="Interactive last-mile delivery simulation">
+    <div class="experience-topline"><span class="eyebrow"><i></i> A LIVING LOGISTICS EXPERIMENT</span><div class="world-info"><span id="weatherLabel"><svg class="icon"><use href="#i-sun"/></svg>Clear skies</span><span class="mono" id="cityClock">17:42</span><button class="icon-button" id="soundButton" aria-label="Enable sound" aria-pressed="false"><svg class="icon"><use href="#i-mute"/></svg></button></div></div>
+<div id="stage" class="stage"><div class="story-column">      <div id="opening" class="opening">
+        <span class="small-tag mono">EVERY ORDER IS A PROMISE.</span>
+        <h1>Can you keep the city <span>moving?</span></h1>
+        <p>A live delivery simulation about speed,<br class="desktop-break"> cost, and the decisions in between.</p>
+        <button id="startButton" class="primary-button">Start Dispatching<svg class="icon"><use href="#i-arrow"/></svg></button>
+        <div class="experience-duration"><span class="tiny-clock"></span>3–5 minute experience <span class="separator">/</span> No two runs alike</div>
+
+      </div>
+      <aside id="missionPanel" class="mission-panel" hidden aria-label="Simulation story and decisions">
+        <div class="mission-top"><span id="chapterEyebrow" class="mono">01 / THE FIRST PROMISE</span><button id="restartTop" class="icon-button" aria-label="Restart the experience"><svg class="icon"><use href="#i-restart"/></svg></button></div>
+        <div class="chapter-track"><span data-chapter="0" class="active"></span><span data-chapter="1"></span><span data-chapter="2"></span></div>
+        <h2 id="missionTitle">A city of competing promises.</h2><p id="missionDescription">Orders are arriving. Riders are finding their way. Your first decision is coming.</p>
+        <div id="decisionOptions" class="decision-options"></div>
+        <div id="missionInsight" class="mission-insight" hidden></div>
+        <div id="chapterFooter" class="chapter-footer"><span class="live-dot"></span><span id="chapterStatus">Observe the city</span><button id="nextEvent">Next event<svg class="icon"><use href="#i-arrow"/></svg></button></div>
+      </aside>
+      <section id="summary" class="summary" hidden aria-label="Your simulation results"><span class="eyebrow">YOUR CITY. YOUR CHOICES.</span><h2>You didn’t just<br>optimize routes.<br><span>You designed priorities.</span></h2><div id="summaryMetrics" class="summary-metrics"></div><div id="summaryDecisions" class="summary-decisions"></div><div id="summaryTradeoff" class="summary-tradeoff"></div><p class="signature">Optimization is never just mathematics.<br><b>It is choosing what the system should care about.</b></p><div class="summary-buttons"><button id="runAgain" class="primary-button">Run the City Again<svg class="icon"><use href="#i-restart"/></svg></button><button id="exploreButton" class="text-button">Explore freely<svg class="icon"><use href="#i-arrow"/></svg></button></div></section>
+    <aside id="impactPanel" class="impact-panel" hidden aria-label="Decision impact"><div class="impact-header"><span id="impactState" class="mono">DECISION APPLIED</span><button id="impactClose" class="icon-button" aria-label="Close decision impact"><svg class="icon"><use href="#i-close"/></svg></button></div><h3 id="impactTitle"></h3><p id="impactChanged"></p><details class="impact-explanation" open><summary>Why, who benefits, and who waits</summary><p id="impactReason"></p><dl><div><dt>Benefits</dt><dd id="impactBenefit"></dd></div><div><dt>Trade-offs</dt><dd id="impactTradeoff"></dd></div></dl></details><div id="impactMetrics" class="impact-metrics"></div><span id="impactWhen" class="impact-when"></span><div class="impact-actions"><button id="impactFocus">View affected ↗</button><button id="impactReplay">Replay impact ↻</button></div></aside></div><div class="city-column"><div class="city-chrome">      <div class="scene-heading"><span class="live-dot"></span><span id="sceneCaption">CITY IS LIVE</span><span class="scene-coordinate mono">01 / 05 DISTRICTS</span></div>
+      <div class="view-controls" role="group" aria-label="City view"><button data-view="city" class="active" aria-pressed="true"><svg class="icon"><use href="#i-city"/></svg>City</button><button data-view="heat" aria-pressed="false"><svg class="icon"><use href="#i-layers"/></svg>Heatmap</button><button data-view="system" aria-pressed="false"><svg class="icon"><use href="#i-grid"/></svg>System</button></div>
+</div>      <div id="sceneViewport" class="scene-viewport"><canvas id="cityCanvas" tabindex="0" aria-label="Interactive 3D delivery city. Drag or use arrow keys to orbit, plus and minus to zoom. Select a rider, merchant, order, or district to inspect."></canvas><div id="mapLabels" class="map-labels" aria-label="District information"></div><div id="impactMapLabels" class="impact-map-labels"></div><div id="hoverLabel" class="hover-label" hidden></div></div>
+
+      <div id="liveNote" class="live-note"><div class="rider-icon"><svg class="icon"><use href="#i-bike"/></svg></div><div><b>R07 <span class="subtle">· On the way</span></b><span id="liveNoteText">A promise in motion</span></div><span class="live-note-arrow">↗</span></div>
+      <aside id="detailPanel" class="detail-panel" hidden aria-label="Selected city entity"><div class="detail-top"><span id="detailType" class="mono">RIDER</span><button id="closeDetail" class="icon-button" aria-label="Close details"><svg class="icon"><use href="#i-close"/></svg></button></div><h3 id="detailTitle"></h3><div id="detailBody"></div></aside>
+      <aside id="systemPanel" class="system-panel" hidden><span class="mono">BENEATH THE CITY</span><h3>Every promise follows a system.</h3><div class="system-flow"><span>Orders<b id="systemOrders">18</b></span><i>→</i><span>Dispatch<b id="systemWaiting">5</b></span><i>→</i><span>Riders<b id="systemRiders">12</b></span></div><div class="system-bottom"><span>Pickup → Route → Delivery</span><b id="systemDelivered">0 delivered</b></div><p>Distance. Time. Capacity. The algorithm works inside the limits you choose.</p></aside>
+      <div class="zoom-controls" role="group" aria-label="Camera controls"><button id="zoomIn" class="icon-button" aria-label="Zoom in"><svg class="icon"><use href="#i-plus"/></svg></button><button id="zoomOut" class="icon-button" aria-label="Zoom out"><svg class="icon"><use href="#i-minus"/></svg></button><span></span><button id="resetCamera" class="icon-button" aria-label="Return to city overview"><svg class="icon"><use href="#i-focus"/></svg></button></div>
+      <div id="toast" class="event-toast" role="status" hidden></div>
+      <div id="failure" class="failure" hidden><svg class="icon"><use href="#i-city"/></svg><h2>The city couldn’t wake up.</h2><p>PULSE CITY could not initialize the 3D city. Try a browser with WebGL enabled.</p><button onclick="location.reload()" class="primary-button">Reload Experience<svg class="icon"><use href="#i-restart"/></svg></button></div>
+<div id="heatLegend" class="heat-legend" hidden><span>Active order density</span><span><i class="heat-low"></i>Low · 1–5</span><span><i class="heat-medium"></i>Medium · 6–11</span><span><i class="heat-high"></i>High · 12+</span></div><p id="viewContext" class="view-context">City View · Riders and customer promises</p><div id="policyBadge" class="map-policy-badge" hidden role="status"></div></div></div>
+      <div class="stage-bottom"><div class="legend"><span><i class="legend-rider"></i>Riders</span><span><i class="legend-order"></i>Orders</span><span><i class="legend-risk"></i>SLA risk</span><span><i class="legend-merchant"></i>Merchants</span></div><span class="camera-hint mono">DRAG TO ORBIT <span>·</span> SCROLL TO ZOOM</span><button id="lastDecision" class="last-decision" aria-controls="impactPanel" aria-expanded="false" hidden>Last decision ↻</button><div class="playback"><button id="pauseButton" class="icon-button" aria-label="Pause simulation" aria-pressed="false"><svg class="icon"><use href="#i-pause"/></svg></button><button id="speedButton" aria-label="Change simulation speed, currently one times">1×</button></div></div>
+    <div class="simulation-footnote"><span><i class="live-dot"></i> <b id="riderCount">12</b> riders available <span>·</span> One city in your hands. <span>·</span> Fictional city. Real trade-offs.</span><button id="methodButton"><svg class="icon"><use href="#i-info"/></svg>About the metrics</button></div>
+    <div id="optimizationPanel" class="optimization-panel" hidden><div><span class="mono">YOUR OPERATING OBJECTIVE</span><strong>What are you optimizing for?</strong></div><div class="optimization-slider"><div><label for="optimization">Customer experience</label><span id="optimizationValue">Balanced</span><span>Delivery efficiency</span></div><input id="optimization" type="range" min="0" max="100" value="50" aria-label="Customer experience to delivery efficiency"><p id="objectivePreview" class="objective-preview" hidden></p><div class="slider-ticks"><span>Shorter waits. More reserve.</span><span>Shared routes. Lower cost.</span></div></div></div>
+    <div class="metrics" aria-label="Live simulation metrics"><div class="metric"><span>ON-TIME RATE<svg class="icon"><use href="#i-check"/></svg></span><div><strong id="metricOnTime">94</strong><em>%</em><small id="onTimeTrend">Promises kept</small></div></div><div class="metric"><span>AVG DELIVERY<svg class="icon"><use href="#i-route"/></svg></span><div><strong id="metricAverage">22</strong><em>min</em><small>From order to doorstep</small></div></div><div class="metric"><span>COST / DELIVERY<svg class="icon"><use href="#i-box"/></svg></span><div><em class="currency">$</em><strong id="metricCost">2.80</strong><small>The price of the promise</small></div></div><div class="metric"><span>ACTIVE ORDERS<svg class="icon"><use href="#i-layers"/></svg></span><div><strong id="metricActive">18</strong><span class="metric-dot"></span><small id="activeTrend">Across the city</small></div></div></div>
+
+    <div id="methodNote" class="method-note" hidden>All values come from this fictional simulation. On-time rate combines completed deliveries and live ETA forecasts. Delivery time includes preparation, pickup and the rider’s route. Cost combines distance shared by batched orders and idle rider reserve. The opening includes 50 simulated past deliveries to establish a baseline; your results count new deliveries only.</div>
+  </section>
+  <section id="how-it-works" class="how-it-works"><div class="how-intro"><span class="eyebrow">THE SYSTEM BEHIND THE STREETS</span><h2>Small city.<br>Big decisions.</h2><p>Every route optimizes something.<br>And sacrifices something else.</p></div><div class="how-steps"><article><span class="step-number mono">01</span><div><h3>See the pressure.</h3><p>Watch demand meet limited supply. Every pulse is a customer waiting for a promise to be kept.</p></div><svg class="icon"><use href="#i-city"/></svg></article><article><span class="step-number mono">02</span><div><h3>Choose what matters.</h3><p>Dispatch for speed. Batch for efficiency. Then let a rainstorm challenge your priorities.</p></div><svg class="icon"><use href="#i-route"/></svg></article><article><span class="step-number mono">03</span><div><h3>Watch the trade-off.</h3><p>Your decisions change routes, wait times, and cost. There’s no perfect score. Just consequences.</p></div><svg class="icon"><use href="#i-layers"/></svg></article></div></section>
+  <section id="creator" class="creator"><div class="creator-label"><span class="eyebrow">BEHIND THE EXPERIMENT</span><span class="creator-monogram">VN<span>↗</span></span></div><div class="creator-copy"><h2>Built by Vinh Nguyen.</h2><p class="creator-lead">Product thinker exploring complex systems<br class="desktop-break"> through interactive digital products.</p><p>I build experiments that turn operational logic, product decisions and abstract systems into experiences people can see, interact with and understand.</p><div class="creator-tags"><span>Product Strategy</span><span>Systems Thinking</span><span>AI Products</span><span>Interactive Experiences</span></div></div><a class="portfolio-button" href="https://vinh-nguyen-portfolio-three.vercel.app/" target="_blank" rel="noopener noreferrer">View my Portfolio<svg class="icon"><use href="#i-up-right"/></svg></a></section>
+</main>
+<footer><a class="brand" href="#top">PULSE CITY<span class="brand-dot">.</span></a><span>Interactive Last-Mile Logistics Experiment</span><span>Built by Vinh Nguyen <a href="https://vinh-nguyen-portfolio-three.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio ↗</a></span></footer>
+<div id="screenReaderStatus" class="sr-only" role="status" aria-live="polite"></div>
+<script type="module">import('./assets/app.js').catch(error=>{console.error(error);document.getElementById('loader').hidden=true;document.getElementById('failure').hidden=false;});</script>
+</body></html>

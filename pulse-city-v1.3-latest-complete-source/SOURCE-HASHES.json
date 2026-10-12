@@ -1,0 +1,120 @@
+{
+  "sourceCommit": "c47972b0167638b63dcfd6da3d2795928351f29d",
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "sourcePath": "README.md",
+      "exportPath": "SOURCE-README.md",
+      "bytes": 2296,
+      "sha256": "c1720d8b309783b12ac992354889d6236a32b20b7d8e13fcaf59f8918eaf423f"
+    },
+    {
+      "sourcePath": "checks-v13.mjs",
+      "exportPath": "checks-v13.mjs",
+      "bytes": 14803,
+      "sha256": "385b584992ee3e0e586d4e5c74a113d318a3783f392981a807fcf609ee19a65a"
+    },
+    {
+      "sourcePath": "checks.mjs",
+      "exportPath": "checks.mjs",
+      "bytes": 6101,
+      "sha256": "a34b3b0ca4b7b37d2237a61c14c2093b3d379912a7fa04640e9a25356d918919"
+    },
+    {
+      "sourcePath": "dist/assets/app.js",
+      "exportPath": "dist/assets/app.js",
+      "bytes": 35066,
+      "sha256": "388fbde680ad17dd88cf109ae94a2ffe72f5ce6ac520e702408feebbc4b89961"
+    },
+    {
+      "sourcePath": "dist/assets/city.js",
+      "exportPath": "dist/assets/city.js",
+      "bytes": 28269,
+      "sha256": "e946e453bdf6bbafaaeda9fb8063467076db1ea4a43bd4e79c89af840bbc5ce5"
+    },
+    {
+      "sourcePath": "dist/assets/dm-sans.ttf",
+      "exportPath": "dist/assets/dm-sans.ttf",
+      "bytes": 48280,
+      "sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9"
+    },
+    {
+      "sourcePath": "dist/assets/favicon.svg",
+      "exportPath": "dist/assets/favicon.svg",
+      "bytes": 216,
+      "sha256": "280a85855eafa5272ce1514636e3b1ec484a39eef36c76235fda8ba719d00446"
+    },
+    {
+      "sourcePath": "dist/assets/feedback.js",
+      "exportPath": "dist/assets/feedback.js",
+      "bytes": 16346,
+      "sha256": "f9d733da839c2766369e77537e7d8e846b5f18ac0e238aa8516ce907bdff5639"
+    },
+    {
+      "sourcePath": "dist/assets/gsap.min.js",
+      "exportPath": "dist/assets/gsap.min.js",
+      "bytes": 72214,
+      "sha256": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
+    },
+    {
+      "sourcePath": "dist/assets/impact-scene.js",
+      "exportPath": "dist/assets/impact-scene.js",
+      "bytes": 4196,
+      "sha256": "a362fcffd45e632055b2faaae3ce5bffd7992f142d211b3ba0598d093000148b"
+    },
+    {
+      "sourcePath": "dist/assets/plex-mono.ttf",
+      "exportPath": "dist/assets/plex-mono.ttf",
+      "bytes": 128812,
+      "sha256": "a7fdc993f9f0387caedba4e42521136fa97e4c0837ae6239bf0413ccf8af00c2"
+    },
+    {
+      "sourcePath": "dist/assets/simulation.js",
+      "exportPath": "dist/assets/simulation.js",
+      "bytes": 18878,
+      "sha256": "7d6aa32e010d54b43044ce90d6ee38d5ae5f13236a454bd32832ea4419c73638"
+    },
+    {
+      "sourcePath": "dist/assets/social-preview.png",
+      "exportPath": "dist/assets/social-preview.png",
+      "bytes": 298423,
+      "sha256": "2391230a82362c52f6a55ef2e9884b1b8406d905902680d50a707ace44385aff"
+    },
+    {
+      "sourcePath": "dist/assets/space-grotesk-bold.ttf",
+      "exportPath": "dist/assets/space-grotesk-bold.ttf",
+      "bytes": 69308,
+      "sha256": "3e756954468ff1cb302dae0414262e72f76a67d87bef3fa1f3226cd0fb9b2d85"
+    },
+    {
+      "sourcePath": "dist/assets/space-grotesk.ttf",
+      "exportPath": "dist/assets/space-grotesk.ttf",
+      "bytes": 69360,
+      "sha256": "ec926d5065eaca49a48f96e312bbae0bbc5733c24215cf5dfabbdccee926fef7"
+    },
+    {
+      "sourcePath": "dist/assets/style.css",
+      "exportPath": "dist/assets/style.css",
+      "bytes": 30248,
+      "sha256": "726460adcc683a520a6f433290a2db7a2a56992faffa1a36e51045056d4e7829"
+    },
+    {
+      "sourcePath": "dist/assets/three.module.min.js",
+      "exportPath": "dist/assets/three.module.min.js",
+      "bytes": 670681,
+      "sha256": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6"
+    },
+    {
+      "sourcePath": "dist/assets/v13.css",
+      "exportPath": "dist/assets/v13.css",
+      "bytes": 15871,
+      "sha256": "53bfd1cedcdfc25bb4444c180b065fe8238f4adfc371994f2367203c780c6296"
+    },
+    {
+      "sourcePath": "dist/index.html",
+      "exportPath": "dist/index.html",
+      "bytes": 17826,
+      "sha256": "0bece02d03ffe04d8832d3b8d6f104cca71e489025437a62482c307c08fb0650"
+    }
+  ]
+}

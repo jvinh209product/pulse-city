@@ -1,0 +1,21 @@
+{
+  "name": "pulse-city",
+  "version": "1.3.0",
+  "private": true,
+  "description": "The latest saved PULSE CITY source export: browser-local 3D delivery simulation.",
+  "type": "module",
+  "engines": { "node": "24.x", "npm": ">=11 <12" },
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "dev": "node scripts/serve.mjs --port 5173",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs --port 4173",
+    "start": "node scripts/serve.mjs --port 4173",
+    "check": "node checks.mjs",
+    "check:v13": "node checks-v13.mjs"
+  },
+  "vendoredLibraries": {
+    "three": { "version": "0.160.1", "file": "dist/assets/three.module.min.js" },
+    "gsap": { "version": "3.12.5", "file": "dist/assets/gsap.min.js" }
+  }
+}

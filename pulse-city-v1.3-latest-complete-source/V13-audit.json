@@ -1,0 +1,472 @@
+{
+  "verified": "Programmatic model transitions and generated Three.js geometry",
+  "browser": "Unavailable; visual layout, GPU rendering and physical tap testing are unverified",
+  "storyCombinations": 27,
+  "viewportCameraChecks": [
+    1920,
+    1680,
+    1440,
+    1280,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "rows": [
+    {
+      "event": "dispatch",
+      "option": "nearest",
+      "status": "applied",
+      "model": "1 order was assigned to R02.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer"
+      ],
+      "metricLabels": [
+        "R02 load",
+        "R02 route",
+        "#A1100 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "dispatch",
+      "option": "available",
+      "status": "applied",
+      "model": "1 order was assigned to R08.",
+      "geometry": [
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer"
+      ],
+      "metricLabels": [
+        "R08 load",
+        "R08 route",
+        "#A1100 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "dispatch",
+      "option": "route",
+      "status": "applied",
+      "model": "1 order was assigned to R04.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer"
+      ],
+      "metricLabels": [
+        "R04 load",
+        "R04 route",
+        "#A1100 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "demand",
+      "option": "rush",
+      "status": "applied",
+      "model": "12 real orders entered the city. The arrival timer is now in dinner rush.",
+      "geometry": [
+        "affected-rider",
+        "displaced"
+      ],
+      "metricLabels": [
+        "Active orders",
+        "Waiting orders",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "batching",
+      "option": "off",
+      "status": "pending_eligible_orders",
+      "model": "The policy is active. Routes will change at the next eligible assignment.",
+      "geometry": [
+        "displaced"
+      ],
+      "metricLabels": [
+        "Waiting orders",
+        "SLA at risk",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "demand",
+      "option": "rush",
+      "status": "applied",
+      "model": "12 real orders entered the city. The arrival timer is now in dinner rush.",
+      "geometry": [
+        "affected-rider",
+        "displaced"
+      ],
+      "metricLabels": [
+        "Active orders",
+        "Waiting orders",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "batching",
+      "option": "conservative",
+      "status": "applied",
+      "model": "3 orders were assigned to R11, R01, R06.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer",
+        "promoted"
+      ],
+      "metricLabels": [
+        "R11 load",
+        "R11 route",
+        "#A1108 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "demand",
+      "option": "rush",
+      "status": "applied",
+      "model": "12 real orders entered the city. The arrival timer is now in dinner rush.",
+      "geometry": [
+        "affected-rider",
+        "displaced"
+      ],
+      "metricLabels": [
+        "Active orders",
+        "Waiting orders",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "batching",
+      "option": "aggressive",
+      "status": "applied",
+      "model": "24 orders were assigned to R12, R07, R10, R11, R02, R01, R03, R04, R06, R05, R09.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer"
+      ],
+      "metricLabels": [
+        "R12 load",
+        "R12 route",
+        "#A1102 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "weather",
+      "option": "rain",
+      "status": "applied",
+      "model": "Travel speeds and live ETAs changed; 10 riders can accept new orders. Demand counts are unchanged.",
+      "geometry": [
+        "affected-rider",
+        "sla-warning"
+      ],
+      "metricLabels": [
+        "Rider speed",
+        "Available riders",
+        "SLA at risk"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "protection",
+      "option": "sla",
+      "status": "pending_eligible_orders",
+      "model": "11 waiting orders moved ahead; 8 moved back.",
+      "geometry": [
+        "promoted",
+        "displaced"
+      ],
+      "metricLabels": [
+        "Waiting orders",
+        "SLA at risk",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "weather",
+      "option": "rain",
+      "status": "applied",
+      "model": "Travel speeds and live ETAs changed; 10 riders can accept new orders. Demand counts are unchanged.",
+      "geometry": [
+        "affected-rider",
+        "sla-warning"
+      ],
+      "metricLabels": [
+        "Rider speed",
+        "Available riders",
+        "SLA at risk"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "protection",
+      "option": "cost",
+      "status": "applied",
+      "model": "21 orders were assigned to R04, R09, R01, R05, R03, R07, R02, R06.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer"
+      ],
+      "metricLabels": [
+        "R04 load",
+        "R04 route",
+        "#A1105 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "weather",
+      "option": "rain",
+      "status": "applied",
+      "model": "Travel speeds and live ETAs changed; 10 riders can accept new orders. Demand counts are unchanged.",
+      "geometry": [
+        "affected-rider",
+        "sla-warning"
+      ],
+      "metricLabels": [
+        "Rider speed",
+        "Available riders",
+        "SLA at risk"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "protection",
+      "option": "value",
+      "status": "pending_eligible_orders",
+      "model": "7 waiting orders moved ahead; 12 moved back.",
+      "geometry": [
+        "promoted",
+        "displaced"
+      ],
+      "metricLabels": [
+        "Waiting orders",
+        "SLA at risk",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "optimization",
+      "option": 10,
+      "status": "pending_eligible_orders",
+      "model": "The policy is active. Routes will change at the next eligible assignment.",
+      "geometry": [],
+      "metricLabels": [
+        "Waiting orders",
+        "SLA at risk",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "optimization",
+      "option": 50,
+      "status": "pending_eligible_orders",
+      "model": "The policy is active. Routes will change at the next eligible assignment.",
+      "geometry": [],
+      "metricLabels": [
+        "Waiting orders",
+        "SLA at risk",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "optimization",
+      "option": 90,
+      "status": "applied",
+      "model": "21 orders were assigned to R12, R06, R10, R09, R01, R07, R03, R02, R11.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer"
+      ],
+      "metricLabels": [
+        "R12 load",
+        "R12 route",
+        "#A1105 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "protection",
+      "option": "sla",
+      "status": "applied",
+      "model": "R01 kept the current stop and changed later waypoints.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider"
+      ],
+      "metricLabels": [
+        "R01 load",
+        "R01 route",
+        "#A1100 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "protection",
+      "option": "value",
+      "status": "applied",
+      "model": "R01 kept the current stop and changed later waypoints.",
+      "geometry": [
+        "previous-route",
+        "updated-route",
+        "numbered-stop",
+        "affected-rider"
+      ],
+      "metricLabels": [
+        "R01 load",
+        "R01 route",
+        "#A1100 SLA buffer"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "batching",
+      "option": "aggressive",
+      "status": "pending_eligible_orders",
+      "model": "The policy is active. Routes will change at the next eligible assignment.",
+      "geometry": [],
+      "metricLabels": [
+        "Waiting orders",
+        "SLA at risk",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "demand",
+      "option": "rush",
+      "status": "applied",
+      "model": "12 real orders entered the city. The arrival timer is now in dinner rush.",
+      "geometry": [
+        "affected-rider",
+        "displaced"
+      ],
+      "metricLabels": [
+        "Active orders",
+        "Waiting orders",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "demand",
+      "option": "normal",
+      "status": "applied",
+      "model": "New demand slows to the normal rate; existing deliveries continue.",
+      "geometry": [
+        "affected-rider"
+      ],
+      "metricLabels": [
+        "Active orders",
+        "Waiting orders",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "weather",
+      "option": "rain",
+      "status": "applied",
+      "model": "Travel speeds and live ETAs changed; 10 riders can accept new orders. Demand counts are unchanged.",
+      "geometry": [
+        "affected-rider",
+        "sla-warning"
+      ],
+      "metricLabels": [
+        "Rider speed",
+        "Available riders",
+        "SLA at risk"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "weather",
+      "option": "clear",
+      "status": "applied",
+      "model": "Travel speeds and live ETAs changed; 12 riders can accept new orders. Demand counts are unchanged.",
+      "geometry": [
+        "affected-rider",
+        "sla-warning"
+      ],
+      "metricLabels": [
+        "Rider speed",
+        "Available riders",
+        "SLA at risk"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "order",
+      "option": "send",
+      "status": "applied",
+      "model": "New order #A1110 entered the waiting queue. Existing eligible orders keep their dispatch priority.",
+      "geometry": [
+        "updated-route",
+        "numbered-stop",
+        "affected-rider",
+        "pickup",
+        "customer",
+        "new-order",
+        "promoted"
+      ],
+      "metricLabels": [
+        "Active orders",
+        "Waiting orders",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    },
+    {
+      "event": "order",
+      "option": "send",
+      "status": "no_change_possible",
+      "model": "No order was added: the city already has 110 active promises.",
+      "geometry": [],
+      "metricLabels": [
+        "Waiting orders",
+        "SLA at risk",
+        "On-time forecast"
+      ],
+      "verified": "Model + generated scene geometry; browser unverified"
+    }
+  ]
+}

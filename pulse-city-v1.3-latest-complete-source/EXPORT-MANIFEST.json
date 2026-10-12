@@ -1,0 +1,147 @@
+{
+  "projectName": "PULSE CITY",
+  "exportLabel": "latest-current-v1.3",
+  "sourceProjectId": "appgprj_6ac465074a508191b3d09cbab053f0c3",
+  "sourceVersion": {
+    "number": 2,
+    "id": "appgprj_6ac465074a508191b3d09cbab053f0c3~appgver_6d3c9660d1cc8191ab15c697bd41068e",
+    "commitSha": "c47972b0167638b63dcfd6da3d2795928351f29d",
+    "matchedCleanCurrentCheckout": true,
+    "latestSavedVersionConfirmed": true
+  },
+  "sourcePublishedState": "published",
+  "sourceDeploymentStatus": "succeeded",
+  "exportedAt": "2026-10-12T10:03:05.809775+00:00",
+  "framework": "Static HTML/CSS/native JavaScript ES modules",
+  "buildTool": "Dependency-free Node.js static production integrity validator; no transpilation",
+  "packageManager": "npm",
+  "packageManagerVersionVerified": "11.9.0",
+  "lockfile": "package-lock.json",
+  "nodeVersion": "24.x",
+  "nodeVersionVerified": "v24.19.0",
+  "localScriptPlatforms": [
+    "Linux",
+    "macOS",
+    "Windows WSL"
+  ],
+  "installCommand": "npm ci",
+  "developmentCommand": "npm run dev",
+  "buildCommand": "npm run build",
+  "previewCommand": "npm run preview",
+  "outputDirectory": "dist",
+  "applicationEntrypoint": "dist/index.html",
+  "zipRootHasEntrypoint": true,
+  "zipRootEntrypoint": "package.json",
+  "extraEnclosingDirectory": false,
+  "includedSourceDirectories": [
+    "dist/",
+    "dist/assets/",
+    "scripts/"
+  ],
+  "includedAssetsSummary": {
+    "productionSourceAndAssetFiles": 16,
+    "productionBytes": 1523994,
+    "editableApplicationJavaScriptFiles": [
+      "dist/assets/app.js",
+      "dist/assets/simulation.js",
+      "dist/assets/city.js",
+      "dist/assets/feedback.js",
+      "dist/assets/impact-scene.js"
+    ],
+    "htmlFiles": 1,
+    "stylesheetFiles": 2,
+    "vendoredLibraries": [
+      {
+        "name": "three",
+        "version": "0.160.1",
+        "file": "dist/assets/three.module.min.js"
+      },
+      {
+        "name": "gsap",
+        "version": "3.12.5",
+        "file": "dist/assets/gsap.min.js"
+      }
+    ],
+    "localFontFiles": [
+      "dist/assets/dm-sans.ttf",
+      "dist/assets/plex-mono.ttf",
+      "dist/assets/space-grotesk-bold.ttf",
+      "dist/assets/space-grotesk.ttf"
+    ],
+    "favicon": "dist/assets/favicon.svg",
+    "socialPreview": "dist/assets/social-preview.png",
+    "geometry": "Original procedural Three.js meshes, instancing, route/stop geometry and Heatmap overlays; no external model/texture downloads",
+    "essentialRuntimeAssetsLocal": true
+  },
+  "environmentVariablesRequired": [],
+  "sitesServicesRequiredAtRuntime": false,
+  "buildStatus": "passed",
+  "productionBuildCommandRuns": 1,
+  "testStatus": {
+    "originalSimulationSuite": "passed",
+    "v13ModelAndCpuSceneGeometrySuite": "passed",
+    "baselineStoryCombinations": 27,
+    "v13StoryCombinations": 27,
+    "v13RecordedActionExercises": 27,
+    "cameraFitWidths": [
+      1920,
+      1680,
+      1440,
+      1280,
+      1024,
+      768,
+      390,
+      320
+    ],
+    "localPreviewHttp": "passed",
+    "originalSourceBytePreservation": "passed",
+    "zipCrcExtractionAndByteIntegrity": "passed",
+    "browserVisualDomGpuTouch": "not_tested",
+    "vercelDeployment": "not_tested"
+  },
+  "packageIntegrity": {
+    "expectedFileCount": 40,
+    "noSecretsOrCaches": true,
+    "noDuplicateEntries": true,
+    "crcAndExtractionVerified": true,
+    "originalApplicationFilesUnchanged": true
+  },
+  "requiredReports": [
+    "README.md",
+    "DEPLOYMENT.md",
+    "FEATURE-STATUS.md",
+    "VALIDATION.md",
+    "EXPORT-MANIFEST.json"
+  ],
+  "sourceChecksumsFile": "SOURCE-HASHES.json",
+  "validationEvidenceFiles": [
+    "validation-results.json",
+    "validation.log",
+    "V13-audit.json"
+  ],
+  "knownLimitations": [
+    "Browser visual layout, DOM clicks, GPU/WebGL rendering, mobile touch, audio and complete accessibility QA: Not tested.",
+    "Exact objective-slider endpoints 0/100 and unchanged-value UI gesture: Not tested; 10/50/90 and continuous 40-to-45 scoring were exercised.",
+    "Gameplay requires WebGL; existing failure fallback is an error/reload message, not an alternate playable renderer.",
+    "Pending policies apply to the next eligible assignment; Batching Off preserves existing assigned batches.",
+    "Original Open Graph absolute URLs retain the original Site domain; update after choosing the new production domain.",
+    "Local export scripts use POSIX path guards: use macOS/Linux or Windows WSL; native Windows local path handling is unsupported.",
+    "GitHub/Vercel creation, push, publishing and deployment were not performed; production hosting and domain availability are untested."
+  ],
+  "knownBuildOrVercelDeploymentBlockers": [],
+  "exportOnlyChanges": [
+    "Portable package scripts and Node/npm declarations",
+    "Single zero-dependency npm lockfile",
+    "Static vercel.json and .nvmrc",
+    "Requested documentation/reports and copied original README",
+    "Third-party license texts/notices and computed source hashes",
+    "Site-only hosting identity omitted; no application code or assets altered"
+  ],
+  "externalMutationsPerformed": {
+    "existingSite": false,
+    "existingRepository": false,
+    "githubPush": false,
+    "vercelDeployment": false
+  },
+  "zipFilename": "pulse-city-v1.3-latest-complete-source.zip"
+}
